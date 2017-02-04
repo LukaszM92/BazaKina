@@ -148,8 +148,8 @@ class FilmyRepository(Repository):
             if Seanse_row == None:
                 Filmy=None
             else:
-                Filmy.date = wpis_row[1]
-                c.execute("SELECT * FROM Wpisy WHERE Filmy_id=? order by Dzien", (id,))
+                Filmy.Sala = Seanse_row[1]
+                c.execute("SELECT * FROM Seanse WHERE Filmy_id=? order by Dzien", (id,))
                 Seanse_items_rows = c.fetchall()
                 items_list = []
                 for item_row in Seanse_items_rows:
@@ -157,7 +157,7 @@ class FilmyRepository(Repository):
                     items_list.append(item)
                 Filmy.Seanse=items_list
         except Exception as e:
-            #print "ksiazka getById error:", e
+            #print "Filmy getById error:", e
             raise RepositoryException('error getting by id Filmy_id: %s' % str(id))
         return Filmy
 
