@@ -118,7 +118,7 @@ class FilmyRepository(Repository):
                     except Exception as e:
                         #print "item add error:", e
                         raise RepositoryException('error adding Filmy item: %s, to Filmy: %s' %
-                                                    (str(Seanseitem), str(Filmy_id))
+                                                    (str(Seanseitem), str(Filmy.id))
                                                 )
         except Exception as e:
             #print "Filmy add error:", e
@@ -207,9 +207,9 @@ if __name__ == '__main__':
                         Seanse = [
                             SeanseItem(Sala = "Alfa",   Dzien = '2017-02-18', Godzina = '15:00:00'),
                             SeanseItem(Sala = "Beta",   Dzien = '2017-02-18', Godzina = '20:00:00'),
-                            SeanseItem(Sala = "Gamma",   Dzien = '2017-02-19', Godzina = '15:00:00'),
-                            SeanseItem(Sala = "Delta",   Dzien = '2017-02-19', Godzina = '20:00:00'),
-                            SeanseItem(Sala = "Omega",   nDzien = '2017-02-19', Godzina = '21:00:00')
+                            SeanseItem(Sala = "Gamma",  Dzien = '2017-02-19', Godzina = '15:00:00'),
+                            SeanseItem(Sala = "Delta",  Dzien = '2017-02-19', Godzina = '20:00:00'),
+                            SeanseItem(Sala = "Omega",  Dzien = '2017-02-19', Godzina = '21:00:00')
                         ]
                     )
                 )
@@ -227,9 +227,9 @@ if __name__ == '__main__':
                         Seanse = [
                             SeanseItem(Sala = "Alfa",   Dzien = '2017-02-20', Godzina = '17:00:00'),
                             SeanseItem(Sala = "Beta",   Dzien = '2017-02-20', Godzina = '20:00:00'),
-                            SeanseItem(Sala = "Gamma",   Dzien = '2017-02-21', Godzina = '17:00:00'),
-                            SeanseItem(Sala = "Delta",   Dzien = '2017-02-21', Godzina = '20:00:00'),
-                            SeanseItem(Sala = "Omega",   nDzien = '2017-02-21', Godzina = '22:00:00')
+                            SeanseItem(Sala = "Gamma",  Dzien = '2017-02-21', Godzina = '17:00:00'),
+                            SeanseItem(Sala = "Delta",  Dzien = '2017-02-21', Godzina = '20:00:00'),
+                            SeanseItem(Sala = "Omega",  Dzien = '2017-02-21', Godzina = '22:00:00')
                         ]
                     )
                 )
