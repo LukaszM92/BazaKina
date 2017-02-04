@@ -23,16 +23,18 @@ class RepositoryException(Exception):
 class Filmy():
     """
     """
-    def __init__(self, id, tytul=(), gatunek=(), dlugosc=[]):
+    def __init__(self, id, tytul=(), gatunek=(), dlugosc=(), Seanse=[]):
         self.id = id
         self.tytul = tytul
         self.gatunek = gatunek
         self.dlugosc = dlugosc
+        self.Seanse = Seanse
+
 
 
     def __repr__(self):
         return "<Filmy(id='%s', tytul='%s', items='%s')>" % (
-                    self.id, self.date, self.wpisy
+                    self.id, self.tytul, self.Seanse
                 )
 
 
@@ -46,7 +48,7 @@ class SeanseItem():
 
 
     def __repr__(self):
-        return "<Seanse(Sala='%s', Dzien='%s', Godzina='%s')>" % (
+        return "<SeanseItem(Sala='%s', Dzien='%s', Godzina='%s')>" % (
                     self.Sala, self.Dzien, self.Godzina
                 )
 
