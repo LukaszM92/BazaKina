@@ -1,0 +1,49 @@
+# -*- coding: utf-8 -*-
+
+import danebaza
+import sqlite3
+import unittest
+
+db_path = 'Kino.db'
+
+class RepositoryTest(unittest.TestCase):
+
+    def setUp(self):
+        conn = sqlite3.connect(db_path)
+        c = conn.cursor()
+        c.execute('DELETE FROM Seanse')
+        c.execute('DELETE FROM Filmy')
+        c.execute('''INSERT INTO Filmy (id, tytul, gatunek, dlugosc) VALUES(1, 'Owca', 'przygodowy', 1.5)''')
+        c.execute('''INSERT INTO Seanse (Sala, dzien, godzina, Filmy_id) VALUES(1,'2016-01-02','05:05:05',1)''')
+        c.execute('''INSERT INTO Seanse (Sala, dzien, godzina, Filmy_id) VALUES(2,'2016-02-02','05:05:05',2)''')
+        conn.commit()
+        conn.close()
+
+    def tearDown(self):
+        conn = sqlite3.connect(db_path)
+        c = conn.cursor()
+        c.execute('DELETE FROM Seanse')
+        c.execute('DELETE FROM Filmy')
+        conn.commit()
+        conn.close()
+
+    def testGetByIdInstance(self):
+        filmy = danebaza.FilmyRepository().getById(1)
+        self.assertIsInstance(filmy, danebaza.Filmy, "Objekt nie jest klasy Filmy")
+
+    def testGetByIdNotFound(self):
+        self.assertEqual(danebaza.FilmyRepository().getById(22),
+                None, "Powinno wyjść None")
+
+    # def testGetByIdSeanseLen(self):
+    #     self.assertEqual(len(danebaza.FilmyRepository().getById(1).seanse),
+    #             2, "Powinno wyjść 2")
+
+    def testDeleteNotFound(self):
+        self.assertRaises(danebaza.RepositoryException,
+                danebaza.FilmyRepository().delete, 22)
+
+
+
+if __name__ == "__main__":
+    unittest.main()
