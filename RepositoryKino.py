@@ -39,7 +39,7 @@ class Filmy():
 
 
 class SeanseItem():
-    """Model występuje tylko wewnątrz obiektu Ksiazka.
+    """Model występuje tylko wewnątrz obiektu Filmy.
     """
     def __init__(self, Sala, Dzien, Godzina):
         self.Sala = Sala
