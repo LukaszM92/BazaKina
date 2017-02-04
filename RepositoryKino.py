@@ -198,72 +198,72 @@ if __name__ == '__main__':
         print(e)
 
     print FilmyRepository().getById(1)
-#
-# if __name__ == '__main__':
-#     try:
-#         with FilmyRepository() as Filmy_repository:
-#             Filmy_repository.add(
-#                 Filmy(id = 2, tytul='Titanic', gatunek='Melodramat',
-#                         Seanse = [
-#                             SeanseItem(Sala = "Alfa",   Dzien = '2017-02-18', Godzina = '15:00:00'),
-#                             SeanseItem(Sala = "Beta",   Dzien = '2017-02-18', Godzina = '20:00:00'),
-#                             SeanseItem(Sala = "Gamma",  Dzien = '2017-02-19', Godzina = '15:00:00'),
-#                             SeanseItem(Sala = "Delta",  Dzien = '2017-02-19', Godzina = '20:00:00'),
-#                             SeanseItem(Sala = "Omega",  Dzien = '2017-02-19', Godzina = '21:00:00')
-#                         ]
-#                     )
-#                 )
-#             Filmy_repository.complete()
-#     except RepositoryException as e:
-#         print(e)
-#
-#     print FilmyRepository().getById(2)
-#
-# if __name__ == '__main__':
-#     try:
-#         with FilmyRepository() as Filmy_repository:
-#             Filmy_repository.add(
-#                 Filmy(id = 3, tytul='Terminator', gatunek='Akcja',
-#                         Seanse = [
-#                             SeanseItem(Sala = "Alfa",   Dzien = '2017-02-20', Godzina = '17:00:00'),
-#                             SeanseItem(Sala = "Beta",   Dzien = '2017-02-20', Godzina = '20:00:00'),
-#                             SeanseItem(Sala = "Gamma",  Dzien = '2017-02-21', Godzina = '17:00:00'),
-#                             SeanseItem(Sala = "Delta",  Dzien = '2017-02-21', Godzina = '20:00:00'),
-#                             SeanseItem(Sala = "Omega",  Dzien = '2017-02-21', Godzina = '22:00:00')
-#                         ]
-#                     )
-#                 )
-#             Filmy_repository.complete()
-#     except RepositoryException as e:
-#         print(e)
-#
-#     print FilmyRepository().getById(3)
-#
-#
-#     try:
-#         with FilmyRepository() as FilmyRepository_repository:
-#             Filmy_repository.update(
-#                 Filmy(id = 1, tytul='Szeregowiec Ryan', gatunek='Wojenne',
-#                         Seanse = [
-#                             SeanseItem(Sala = "Alfa",   Dzien = '2017-02-16', Godzina = '16:30:00'),
-#                             SeanseItem(Sala = "Beta",   Dzien = '2017-02-16', Godzina = '21:00:00'),
-#                             SeanseItem(Sala = "Gamma",   Dzien = '2017-02-17', Godzina = '16:00:00'),
-#                             SeanseItem(Sala = "Delta",   Dzien = '2017-02-17', Godzina = '20:00:00'),
-#                             SeanseItem(Sala = "Omega",   nDzien = '2017-02-18', Godzina = '22:00:00')
-#                         ]
-#                     )
-#                 )
-#             Filmy_repository.complete()
-#     except RepositoryException as e:
-#         print(e)
-#
-#     print FilmyRepository().getById(1)
-#
-#
-#
-#     try:
-#         with FilmyRepository() as Filmy_repository:
-#             Filmy_repository.delete( Filmy(id = 2) )
-#             Filmy_repository.complete()
-#     except RepositoryException as e:
-#         print(e)
+
+if __name__ == '__main__':
+    try:
+        with FilmyRepository() as filmy_repository:
+            filmy_repository.add(
+                Filmy(id = 2, tytul='Titanic', gatunek='Melodramat', dlugosc=2,
+                        seanse = [
+                            SeanseItem(sala = "Alfa",   dzien = '2017-02-18', godzina = '15:00:00'),
+                            SeanseItem(sala = "Beta",   dzien = '2017-02-18', godzina = '20:00:00'),
+                            SeanseItem(sala = "Gamma",  dzien = '2017-02-19', godzina = '15:00:00'),
+                            SeanseItem(sala = "Delta",  dzien = '2017-02-19', godzina = '20:00:00'),
+                            SeanseItem(sala = "Omega",  dzien = '2017-02-19', godzina = '21:00:00')
+                        ]
+                    )
+                )
+            filmy_repository.complete()
+    except RepositoryException as e:
+        print(e)
+
+    print FilmyRepository().getById(2)
+
+if __name__ == '__main__':
+    try:
+        with FilmyRepository() as filmy_repository:
+            filmy_repository.add(
+                Filmy(id = 3, tytul='Terminator', gatunek='Akcja', dlugosc=1.5,
+                        seanse = [
+                            SeanseItem(sala = "Alfa",   dzien = '2017-02-20', godzina = '17:00:00'),
+                            SeanseItem(sala = "Beta",   dzien = '2017-02-20', godzina = '20:00:00'),
+                            SeanseItem(sala = "Gamma",  dzien = '2017-02-21', godzina = '17:00:00'),
+                            SeanseItem(sala = "Delta",  dzien = '2017-02-21', godzina = '20:00:00'),
+                            SeanseItem(sala = "Omega",  dzien = '2017-02-21', godzina = '22:00:00')
+                        ]
+                    )
+                )
+            filmy_repository.complete()
+    except RepositoryException as e:
+        print(e)
+
+    print FilmyRepository().getById(3)
+
+#### "UPDATE"
+    try:
+        with FilmyRepository() as filmy_repository:
+            filmy_repository.update(
+                Filmy(id = 1, tytul='Szeregowiec Ryan', gatunek='Wojenne',dlugosc=1,
+                        seanse = [
+                            SeanseItem(sala = "Alfa",   dzien = '2017-02-16', godzina = '16:30:00'),
+                            SeanseItem(sala = "Beta",   dzien = '2017-02-16', godzina = '21:00:00'),
+                            SeanseItem(sala = "Gamma",  dzien = '2017-02-17', godzina = '16:00:00'),
+                            SeanseItem(sala = "Delta",  dzien = '2017-02-17', godzina = '20:00:00'),
+                            SeanseItem(sala = "Omega",  dzien = '2017-02-18', godzina = '22:00:00')
+                        ]
+                    )
+                )
+            filmy_repository.complete()
+    except RepositoryException as e:
+        print(e)
+
+    print FilmyRepository().getById(1)
+
+#### "DELETE"
+
+    try:
+        with FilmyRepository() as filmy_repository:
+            filmy_repository.delete( Filmy(id = 2) )
+            filmy_repository.complete()
+    except RepositoryException as e:
+        print(e)
